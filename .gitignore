@@ -1,0 +1,10 @@
+*.pyo
+*.pyc
+secret.json
+media
+media/*
+.idea
+.idea/*
+WOP/wsgi.py
+WOP/settings.py
+*.backup
