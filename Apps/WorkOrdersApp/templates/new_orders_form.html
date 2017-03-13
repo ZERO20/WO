@@ -1,5 +1,10 @@
 {% extends 'base.html' %}
 {% block contenedor %}
+    <section class="content-header">
+      <h1>
+        Create Order
+      </h1>
+    </section>
 <div class="row">
     <!-- right column -->
     <div class="col-md-7">
@@ -11,7 +16,7 @@
         </div>
         <!-- /.box-header -->
         <!-- form start -->
-        <form class="form-horizontal" id="form" method="POST" enctype="multipart/form-data">
+        <form role="form" id="form" method="POST" enctype="multipart/form-data">
           {% csrf_token %}
           {% include "form_snippet.html" %}
           <!-- /.box-body -->
@@ -33,24 +38,8 @@
 {% block extrajs %}
     <script>
     $("div#example").dropzone({ url: "{% url "dropzone" %}" });
-    $(function () {
-        $('#example2').DataTable({
-          "paging": true,
-          "lengthChange": false,
-          "searching": false,
-          "ordering": true,
-          "info": true,
-          "autoWidth": false
-        });
-        $('#example1').DataTable({
-          "paging": true,
-          "lengthChange": false,
-          "searching": false,
-          "ordering": true,
-          "info": true,
-          "autoWidth": false
-        });
-
-    });
+    $( "#id_start_date,#id_end_date" ).datepicker({
+        format:'yyyy-m-dd'
+    }).attr('readonly',true);
     </script>
 {% endblock %}
