@@ -41,6 +41,20 @@ class Person(models.Model):
         return '%s - %s' % (self.first_name, self.last_name)
 
 
+class Remark(models.Model):
+    description = models.TextField()
+    status = models.ForeignKey(Status)
+    creation_date = models.DateTimeField(auto_now_add=True)
+    user = models.ForeignKey(User)
+
+    class Meta:
+        verbose_name = 'Remark'
+        verbose_name_plural = 'Remarks'
+
+    def __str__(self):
+        return '%s' % (self.description)
+
+
 class Order(models.Model):
     number = models.CharField(max_length=50)
     start_date = models.DateField(auto_now_add=False)
