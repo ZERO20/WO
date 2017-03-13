@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% block contenedor %}
+<div class="row">
+    <!-- right column -->
+    <div class="col-md-7">
+      <!-- Horizontal Form -->
+      <div class="box box-info">
+        <div class="box-header with-border">
+{#          <h3 class="box-title">Nuevo agente de ventas</h3>#}
+            Los campos necesarios están marcados <b style="color: red;">*</b>
+        </div>
+        <!-- /.box-header -->
+        <!-- form start -->
+        <form class="form-horizontal" id="form" method="POST" enctype="multipart/form-data">
+          {% csrf_token %}
+          {% include "form_snippet.html" %}
+          <!-- /.box-body -->
+          <div class="box-footer">
+            {% if persona %}
+                <a href="{% url 'lista-agente' %}" class="btn btn-warning">Terminar</a>
+            {% endif %}
+            <button type="submit" class="btn btn-info pull-right">Enviar</button>
+          </div>
+          <!-- /.box-footer -->
+        </form>
+      </div>
+      <!-- /.box -->
+    </div>
+    <!--/.col (right) -->
+  </div>
+  <!-- /.row -->
+{% endblock contenedor %}
+{% block extrajs %}
+    <script>
+    $("div#example").dropzone({ url: "{% url "dropzone" %}" });
+    $(function () {
+        $('#example2').DataTable({
+          "paging": true,
+          "lengthChange": false,
+          "searching": false,
+          "ordering": true,
+          "info": true,
+          "autoWidth": false
+        });
+        $('#example1').DataTable({
+          "paging": true,
+          "lengthChange": false,
+          "searching": false,
+          "ordering": true,
+          "info": true,
+          "autoWidth": false
+        });
+
+    });
+    </script>
+{% endblock %}

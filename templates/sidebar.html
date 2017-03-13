@@ -24,12 +24,12 @@
         </li>
         <li class="{{ work_orders }} treeview">
             <a href="#">
-                <i class="fa  fa-users"></i> <span>Module</span> <i
+                <i class="fa  fa-users"></i> <span>Orders</span> <i
                     class="fa fa-angle-left pull-right"></i>
             </a>
             <ul class="treeview-menu">
                     <li class="{{ list_orders }}"><a href="{% url 'work-orders-list' %}"><i class="fa fa-circle-o"></i> Work Orders</a></li>
-                    <li class="{{ new_orders }}"><a href="#"><i class="fa fa-circle-o"></i> New Order</a></li>
+                    <li class="{{ new_orders }}"><a href="{% url 'new-order' %}"><i class="fa fa-circle-o"></i> New Order</a></li>
                 </ul>
         </li>
     </ul>
