@@ -22,14 +22,14 @@
             <i class="fa fa-dashboard"></i> <span>Home</span>
           </a>
         </li>
-        <li class="{{ agentes_s }} treeview">
+        <li class="{{ work_orders }} treeview">
             <a href="#">
                 <i class="fa  fa-users"></i> <span>Module</span> <i
                     class="fa fa-angle-left pull-right"></i>
             </a>
             <ul class="treeview-menu">
-                    <li class=""><a href="{% url 'work-orders-list' %}"><i class="fa fa-circle-o"></i> Work Orders</a></li>
-                    <li class=""><a href="#"><i class="fa fa-circle-o"></i> New Order</a></li>
+                    <li class="{{ list_orders }}"><a href="{% url 'work-orders-list' %}"><i class="fa fa-circle-o"></i> Work Orders</a></li>
+                    <li class="{{ new_orders }}"><a href="#"><i class="fa fa-circle-o"></i> New Order</a></li>
                 </ul>
         </li>
     </ul>
