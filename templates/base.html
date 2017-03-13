@@ -74,15 +74,13 @@
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         <section class="content-header">
-            <h1>
-                {% block title_content %}
-                {% endblock %}
-            </h1>
+            {% block title_content %}
+            {% endblock %}
             <ol class="breadcrumb">
                 {% block breadcrumb %}
                     <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
                 {% endblock %}
-                {#                <li class="active">Dashboard</li>#}
+                <li class="active">Dashboard</li>
             </ol>
         </section>
 
