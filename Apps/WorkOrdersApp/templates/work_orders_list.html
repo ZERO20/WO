@@ -50,7 +50,10 @@
                       <td>{{ p.vendor }}</td>
                       <td>{{ p.vendor_sub_out }}</td>
                       <td>{{ p.sub_out }}</td>
-                      <td><a href="{% url 'detail-order' p.id %}"><i class="fa fa-fw fa-eye"></i></a></td>
+                      <td>
+                          <a href="{% url 'detail-order' p.id %}"><i class="fa fa-fw fa-eye"></i></a>
+                          <a href="{% url 'edit-order' p.id %}"><i class="fa fa-fw fa-edit"></i></a>
+                      </td>
                     </tr>
                 {% endfor %}
 

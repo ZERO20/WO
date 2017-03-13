@@ -21,8 +21,9 @@
           {% include "form_snippet.html" %}
           <!-- /.box-body -->
           <div class="box-footer">
-            {% if persona %}
-                <a href="{% url 'lista-agente' %}" class="btn btn-warning">Terminar</a>
+    
+            {% if order %}
+                <a href="{% url 'work-orders-list' %}" class="btn btn-warning">Cancelar</a>
             {% endif %}
             <button type="submit" class="btn btn-info pull-right">Enviar</button>
           </div>
