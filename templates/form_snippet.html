@@ -2,17 +2,8 @@
     {% if not field.is_hidden %}
         <div class="box-body">
             <div class="form-group">
-                <!--<label for="inputexample" class="col-sm-2 control-label">-->
-                <label for="inputexample">
-                    {{ field.label }}
-                    {% if field.field.required %}
-                        <b style="color: red;">*</b>
-                    {% endif %}
-                </label>
-                <!--<div class="col-sm-10">Guat-->
-                <div class="form-group">
-                    {{ field }}
-                </div>
+                <label for="exampleInputEmail1">{{ field.label }}{% if field.field.required %}<b style="color: red;">*</b>{% endif %}</label>
+                {{ field }}
                 <div class="has-error">
                     {% for error in field.errors %}
                         <span class="help-block help_b_h_{{ field.html_name }}">{{ error }}</span>
