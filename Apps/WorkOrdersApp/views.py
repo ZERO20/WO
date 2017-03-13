@@ -9,3 +9,13 @@ class DropZoneExample(TemplateView):
         context = self.get_context_data()
         print('the photo arrived!')
         return super(TemplateView, self).render_to_response(context)
+
+
+class WorkOrdersListView(TemplateView):
+    "Example of dropzone usage"
+    template_name = 'work_orders_list.html'
+
+    def post(self, request, *args, **kwargs):
+        context = self.get_context_data()
+        print('the photo arrived!')
+        return super(TemplateView, self).render_to_response(context)

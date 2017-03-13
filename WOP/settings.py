@@ -32,7 +32,11 @@ def get_secret(setting, secrets=secrets):
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
+SECRET_KEY = get_secret("SECRET_KEY")
 
+LOGIN_URL = reverse_lazy('login-view')
+LOGIN_REDIRECT_URL = reverse_lazy('work-orders-list')
+LOGOUT_REDIRECT_URL = reverse_lazy('login-view')
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = get_secret("SECRET_KEY")
 
@@ -52,6 +56,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'Apps.WorkOrdersApp',
+    'Apps.Login',
     'reversion',
     'django.contrib.gis',
 ]

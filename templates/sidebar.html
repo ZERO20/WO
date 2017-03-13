@@ -28,10 +28,9 @@
                     class="fa fa-angle-left pull-right"></i>
             </a>
             <ul class="treeview-menu">
-                {% if perms.administracion.agregar_agente %}
-                    <li class="{{ agente_nuevo_s }}"><a href="#"><i class="fa fa-circle-o"></i> New</a></li>
-                {% endif %}
-            </ul>
+                    <li class=""><a href="{% url 'work-orders-list' %}"><i class="fa fa-circle-o"></i> Work Orders</a></li>
+                    <li class=""><a href="#"><i class="fa fa-circle-o"></i> New Order</a></li>
+                </ul>
         </li>
     </ul>
 </section>
