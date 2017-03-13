@@ -1,5 +1,5 @@
 from django.contrib import admin
-from Apps.WorkOrdersApp.models import Status,Person,Order
+from Apps.WorkOrdersApp.models import Status,Person,Order,Remark
 from reversion.admin import VersionAdmin
 
 
@@ -15,4 +15,9 @@ class PersonModelAdmin(VersionAdmin):
 
 @admin.register(Order)
 class OrderModelAdmin(VersionAdmin):
+    pass
+
+
+@admin.register(Remark)
+class RemarkModelAdmin(VersionAdmin):
     pass

@@ -46,6 +46,8 @@
               href="{% static 'administration/plugins/datatables/extensions/Responsive/css/dataTables.responsive.css' %}">
         <!-- Select2 -->
         <link rel="stylesheet" href="{% static 'administration/plugins/select2/select2.min.css' %}">
+        <!--Dropzone-->
+        <link rel="stylesheet" href="{% static 'administration/plugins/dropzone/dropzone.css' %}">
     {% endblock %}
     {% block extrahead %}
     {% endblock %}
@@ -73,12 +75,12 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                {% block title_conten %}
+                {% block title_content %}
                 {% endblock %}
             </h1>
             <ol class="breadcrumb">
                 {% block breadcrumb %}
-                    <li><a href="{% url 'home' %}"><i class="fa fa-dashboard"></i> Home</a></li>
+                    <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
                 {% endblock %}
                 {#                <li class="active">Dashboard</li>#}
             </ol>
@@ -140,7 +142,7 @@
     <!-- /.modal -->
 </div>
 
-<!-- jQuery 2.1.4 -->
+<!-- jQuery 2.2.3 -->
 <script src="{% static 'administration/plugins/jQuery/jquery-2.2.3.min.js' %}"></script>
 <!-- jQuery UI 1.11.4 -->
 <script src="{% static 'administration/plugins/jQueryUI/jquery-ui.min.js' %}"></script>
@@ -197,6 +199,8 @@
 <link rel="stylesheet" href="{% static 'administration/plugins/jqueryValidate/css/screen.css' %}">
 <!-- Componentes reutilizables -->
 <script src="{% static 'administration/apps/administration.js' %}"></script>
+<!--dropzone-->
+<script src="{% static 'administration/plugins/dropzone/dropzone.js' %}"></script>
 <script>
     document.oncontextmenu = function () {
         return false
