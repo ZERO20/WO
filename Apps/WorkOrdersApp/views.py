@@ -1,5 +1,5 @@
 #encoding:utf-8
-from django.views.generic import TemplateView, CreateView
+from django.views.generic import TemplateView, CreateView, DetailView
 from django.core.urlresolvers import reverse_lazy, reverse
 from django.db import transaction
 from django.contrib import messages
@@ -55,4 +55,16 @@ class NewOrderView( CreateView):
         context = super(NewOrderView, self).get_context_data(**kwargs)
         context['work_orders'] = 'active'
         context['new_orders'] = 'active'
+        return context
+
+
+class DetailOrderView(DetailView):
+    model = Order
+    template_name = 'detail_order.html'
+
+
+    def get_context_data(self, **kwargs):
+        context = super(DetailOrderView, self).get_context_data(**kwargs)
+        context["list_orders"] = "active"
+        context['work_orders'] = 'active'
         return context
